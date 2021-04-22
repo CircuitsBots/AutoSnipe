@@ -14,8 +14,7 @@ class Sniper(commands.Cog):
     @commands.Cog.listener()
     async def on_message_delete(self, message: discord.Message):
         await message.channel.send(
-            f"{message.author}: {message.system_content}",
-            files=message.attachments
+            f"{message.author}: {message.system_content or '*file only*'}"
         )
 
 
